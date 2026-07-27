@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta name="description" content="AS KFZ Technik – Lackiererfreie Hagelschaden- und Dellenreparatur in Albstadt. Kfz-Meister Senol Akyürek. Direkte Versicherungsabrechnung. Kostenlose Begutachtung.">
+<meta name="description" content="AS KFZ Technik – Lackiererfreie Hagelschaden- und Dellenreparatur in Albstadt. Kfz-Meister Senol Akyürek. Kostenlose Begutachtung.">
 <title>AS KFZ Technik – Hagelschaden & Werkstatt Albstadt</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --green: #2ECC2E;
+  --green: #1A7A1A;
   --green-bg: #EDFAED;
   --green-mid: #1a7a1a;
   --black: #111111;
@@ -219,8 +219,15 @@ h1.hero-title em { font-style: normal; color: var(--green-mid); font-weight: 600
 }
 .ba-after::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(46,204,46,0.06) 0%, transparent 70%);
+  background: linear-gradient(135deg, rgba(26,122,26,0.06) 0%, transparent 70%);
 }
+.ba-wrap.has-photos .ba-before,
+.ba-wrap.has-photos .ba-after { background: var(--bg); }
+.ba-wrap.has-photos .ba-before img,
+.ba-wrap.has-photos .ba-after img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;
+}
+.ba-wrap.has-photos .ba-after::before { display: none; }
 .ba-line { position: absolute; top:0; bottom:0; left:50%; width:2px; background: var(--white); transform: translateX(-50%); z-index:10; }
 .ba-knob {
   position: absolute; top:50%; left:50%;
@@ -270,7 +277,7 @@ h1.hero-title em { font-style: normal; color: var(--green-mid); font-weight: 600
 .l-card.featured .l-desc { color: rgba(255,255,255,0.45); }
 .l-num { font-size: 2.5rem; font-weight: 600; color: rgba(0,0,0,0.15); line-height: 1; margin-bottom: 1rem; }
 .l-icon { width: 36px; height: 36px; background: var(--green-bg); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-.l-card.featured .l-icon { background: rgba(46,204,46,0.12); }
+.l-card.featured .l-icon { background: rgba(26,122,26,0.12); }
 .l-icon svg { width: 18px; height: 18px; stroke: var(--green-mid); }
 .l-card.featured .l-icon svg { stroke: var(--green); }
 .l-title { font-size: 1rem; font-weight: 600; color: var(--black); margin-bottom: 0.5rem; }
@@ -278,7 +285,7 @@ h1.hero-title em { font-style: normal; color: var(--green-mid); font-weight: 600
 .l-badge {
   display: inline-flex; align-items: center; gap: 5px;
   margin-top: 1rem; padding: 4px 10px; border-radius: 20px;
-  background: rgba(46,204,46,0.12); font-size: 0.72rem; font-weight: 500; color: var(--green);
+  background: rgba(26,122,26,0.12); font-size: 0.72rem; font-weight: 500; color: var(--green);
 }
 .l-badge::before { content: '✓'; }
 
@@ -384,7 +391,7 @@ a.k-val:hover { color: var(--green-mid); }
 .map-pulse {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
   width: 48px; height: 48px; border-radius: 50%;
-  background: rgba(46,204,46,0.12);
+  background: rgba(26,122,26,0.12);
   animation: puls 2s ease-out infinite;
 }
 @keyframes puls { 0%{transform:translate(-50%,-50%) scale(0.8);opacity:1} 100%{transform:translate(-50%,-50%) scale(2);opacity:0} }
@@ -482,7 +489,6 @@ nav.nav-open .nh-3 { transform: translateY(-7px) rotate(-45deg); }
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-chip">Direkte Versicherungsabrechnung</div>
     <h1 class="hero-title">
       Hagelschaden?<br>
       Wir kümmern uns<br>
@@ -525,22 +531,22 @@ nav.nav-open .nh-3 { transform: translateY(-7px) rotate(-45deg); }
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="ticker-dot"></span>Hagelschadenreparatur</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Versicherungsabrechnung</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Albstadt</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Alle Marken</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Lackiererfreie Reparatur</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>TÜV Vorbereitung</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Hagelschaden &amp; Dellenreparatur</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>HU / TÜV Vorbereitung</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Inspektion &amp; Ölwechsel</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Bremsen & Fahrwerk</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Kfz-Meisterbetrieb</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Hagelschadenreparatur</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Versicherungsabrechnung</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Albstadt</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Alle Marken</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Lackiererfreie Reparatur</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>TÜV Vorbereitung</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Klimaservice</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Reifen &amp; Felgen</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Unfallschäden</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Allgemeine Reparaturen</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Hagelschaden &amp; Dellenreparatur</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>HU / TÜV Vorbereitung</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Inspektion &amp; Ölwechsel</span>
     <span class="ticker-item"><span class="ticker-dot"></span>Bremsen & Fahrwerk</span>
-    <span class="ticker-item"><span class="ticker-dot"></span>Kfz-Meisterbetrieb</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Klimaservice</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Reifen &amp; Felgen</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Unfallschäden</span>
+    <span class="ticker-item"><span class="ticker-dot"></span>Allgemeine Reparaturen</span>
   </div>
 </div>
 
@@ -562,14 +568,14 @@ nav.nav-open .nh-3 { transform: translateY(-7px) rotate(-45deg); }
   </div>
   <div class="ba-grid">
     <div class="ba-card r d1">
-      <div class="ba-wrap" id="ba1">
-        <div class="ba-before"></div>
-        <div class="ba-after" id="ba1a"></div>
+      <div class="ba-wrap has-photos" id="ba1">
+        <div class="ba-before"><img src="Nachher.jpeg" alt="Fahrzeugseite nach der lackierfreien Dellenreparatur"></div>
+        <div class="ba-after" id="ba1a"><img src="Vorher.jpeg" alt="Delle an der Fahrzeugseite vor der Reparatur"></div>
         <div class="ba-line" id="ba1d"></div>
         <div class="ba-knob" id="ba1h"></div>
         <span class="ba-tag-b">Vorher</span><span class="ba-tag-a">Nachher</span>
       </div>
-      <div class="ba-info"><div class="ba-info-t">Motorhaube — Hagelschaden</div><div class="ba-info-s">Lackierfrei repariert</div></div>
+      <div class="ba-info"><div class="ba-info-t">Seitenwand — Delle</div><div class="ba-info-s">Lackierfrei repariert</div></div>
     </div>
     <div class="ba-card r d2">
       <div class="ba-wrap" id="ba2">
@@ -608,7 +614,6 @@ nav.nav-open .nh-3 { transform: translateY(-7px) rotate(-45deg); }
       </div>
       <div class="l-title">Hagelschaden & Dellenreparatur</div>
       <p class="l-desc">Lackiererfreie Dellen-Reparatur — schonend, schnell, ohne Wertverlust. Kostenlose Begutachtung. Wir rechnen direkt mit Ihrer Versicherung ab.</p>
-      <span class="l-badge">Direkte Versicherungsabrechnung</span>
     </div>
     <div class="l-card r d2">
       <div class="l-num">02</div>
@@ -695,12 +700,6 @@ nav.nav-open .nh-3 { transform: translateY(-7px) rotate(-45deg); }
     <div class="eyebrow">Ihr Meisterbetrieb</div>
     <h2 class="section-h">Senol <em>Akyürek</em></h2>
     <p class="about-text">Als Inhaber und Kfz-Meister stehe ich persönlich für jede Reparatur ein. Kein Callcenter, kein Zwischenhändler — Sie sprechen direkt mit mir.<br><br>Mein Spezialgebiet ist die lackiererfreie Dellen- und Hagelschadenreparatur. Mit moderner Technik und Erfahrung aus hunderten Fällen bringe ich Ihr Fahrzeug zurück in den Originalzustand.</p>
-    <div class="about-stats">
-      <div class="a-stat"><div class="a-stat-n">15<span>+</span></div><div class="a-stat-l">Jahre Erfahrung</div></div>
-      <div class="a-stat"><div class="a-stat-n">✓</div><div class="a-stat-l">Zertifiziert</div></div>
-      <div class="a-stat"><div class="a-stat-n">Alle</div><div class="a-stat-l">Marken & Modelle</div></div>
-      <div class="a-stat"><div class="a-stat-n">Fair</div><div class="a-stat-l">Festpreise</div></div>
-    </div>
   </div>
 </section>
 
