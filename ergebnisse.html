@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Vorher-Nachher Galerie & Ergebnisse von AS KFZ Technik Albstadt: Lackierfreie Hagelschaden- und Dellenreparatur.">
+  <title>Ergebnisse & Galerie | AS KFZ Technik Albstadt</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header stuck" id="header">
+    <div class="header-left">
+      <a class="brand" href="index.html" aria-label="AS KFZ Technik Startseite"><img src="LOGO.png" alt="AS KFZ Technik"></a>
+    </div>
+    <div class="header-right">
+      <a class="call-button" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </header>
+
+  <main class="subpage-container gallery-container">
+    <div class="section-head">
+      <p class="section-label">Ergebnisse & Galerie</p>
+      <h1 class="subpage-title">Handwerk,<br>das man <span class="stroke">sieht.</span></h1>
+      <p class="section-sub">Ausschließlich echte Vorher-Nachher Vergleiche unserer Dellen- und Hagelschadenreparatur.</p>
+    </div>
+
+    <!-- Grid mit Vorher/Nachher Schiebereglern -->
+    <div class="compare-grid reveal">
+      <!-- Fall 1: BMW M2 -->
+      <article class="compare-card">
+        <div class="compare" data-compare>
+          <img src="Nachher2.jpg" alt="BMW M2 nach der Dellenreparatur" class="compare-after-img">
+          <div class="compare-before">
+            <img src="Vorher2.jpg" alt="BMW M2 vor der Dellenreparatur" class="compare-before-img">
+          </div>
+          <span class="compare-tag before">Vorher</span>
+          <span class="compare-tag after">Nachher</span>
+          <div class="compare-line"><div class="compare-handle" aria-hidden="true">↔</div></div>
+        </div>
+        <div class="compare-thumbs">
+          <button class="thumb-btn active" data-before="Vorher2.jpg" data-after="Nachher2.jpg" data-label="Ansicht 1: Motorhaube Hauptansicht">
+            <img src="Nachher2.jpg" alt="Ansicht 1">
+            <span>Ansicht 1</span>
+          </button>
+        </div>
+        <div class="compare-card-info">
+          <div>
+            <span class="card-cat">Einzeldelle · Lackierfrei</span>
+            <h3>BMW M2 Competition</h3>
+          </div>
+          <p class="view-label-text">Ansicht 1: Motorhaube Hauptansicht</p>
+          <p>Präzises Ausbeulen einer tiefen Delle auf der Motorhaube. Originallack zu 100 % erhalten.</p>
+        </div>
+      </article>
+
+      <!-- Fall 2: Mercedes B200 -->
+      <article class="compare-card">
+        <div class="compare" data-compare>
+          <img src="Nachher.jpeg" alt="Mercedes B200 nach der Hagelreparatur" class="compare-after-img">
+          <div class="compare-before">
+            <img src="Vorher.jpeg" alt="Mercedes B200 vor der Hagelreparatur" class="compare-before-img">
+          </div>
+          <span class="compare-tag before">Vorher</span>
+          <span class="compare-tag after">Nachher</span>
+          <div class="compare-line"><div class="compare-handle" aria-hidden="true">↔</div></div>
+        </div>
+        <div class="compare-thumbs">
+          <button class="thumb-btn active" data-before="Vorher.jpeg" data-after="Nachher.jpeg" data-label="Ansicht 1: Seitenwand Gesamt">
+            <img src="Nachher.jpeg" alt="Ansicht 1">
+            <span>Ansicht 1</span>
+          </button>
+        </div>
+        <div class="compare-card-info">
+          <div>
+            <span class="card-cat">Hagelschaden · Sanfte Instandsetzung</span>
+            <h3>Mercedes-Benz B200</h3>
+          </div>
+          <p class="view-label-text">Ansicht 1: Seitenwand Gesamt</p>
+          <p>Umfangreiche Hagelinstandsetzung der kompletten Seitenwand und Dachpartie ohne Nachlackieren.</p>
+        </div>
+      </article>
+    </div>
+
+    <!-- CTA Box at Bottom -->
+    <div class="gallery-cta-box reveal">
+      <div>
+        <h2>Schaden am eigenen Fahrzeug?</h2>
+        <p>Senden Sie uns ein Foto oder vereinbaren Sie direkt einen Besichtigungstermin in Albstadt.</p>
+      </div>
+      <a class="button-solid" href="index.html#kontakt">Schaden anfragen <i>→</i></a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <img src="LOGO.png" alt="AS KFZ Technik">
+      <span>© 2026 AS KFZ Technik · Senol Akyürek · Im Stöcken 14, 72458 Albstadt</span>
+      <span class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></span>
+    </div>
+  </footer>
+
+  <script>
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Vorher/Nachher Compare-Logik für alle Karten im Raster
+    document.querySelectorAll('.compare-card').forEach(card => {
+      const compare = card.querySelector('[data-compare]');
+      const compareBefore = compare.querySelector('.compare-before');
+      const compareBeforeImg = compare.querySelector('.compare-before-img');
+      const compareAfterImg = compare.querySelector('.compare-after-img');
+      const compareLine = compare.querySelector('.compare-line');
+      const viewLabel = card.querySelector('.view-label-text');
+      const thumbs = card.querySelectorAll('.thumb-btn');
+      let dragging = false;
+
+      function setCompare(percent) {
+        const p = Math.max(0, Math.min(100, percent));
+        compareBefore.style.clipPath = `inset(0 ${100 - p}% 0 0)`;
+        compareLine.style.left = `${p}%`;
+      }
+      function moveCompare(clientX) {
+        const rect = compare.getBoundingClientRect();
+        setCompare((clientX - rect.left) / rect.width * 100);
+      }
+
+      compare.addEventListener('pointerdown', e => {
+        dragging = true;
+        compare.setPointerCapture(e.pointerId);
+        moveCompare(e.clientX);
+      });
+      compare.addEventListener('pointermove', e => {
+        if (dragging) moveCompare(e.clientX);
+      });
+      compare.addEventListener('pointerup', () => { dragging = false; });
+      compare.addEventListener('pointercancel', () => { dragging = false; });
+
+      // Thumbnail-Wechsel innerhalb der Karte
+      thumbs.forEach(thumb => {
+        thumb.addEventListener('click', e => {
+          e.stopPropagation();
+          thumbs.forEach(t => t.classList.remove('active'));
+          thumb.classList.add('active');
+
+          if (compareAfterImg) compareAfterImg.src = thumb.dataset.after;
+          if (compareBeforeImg) compareBeforeImg.src = thumb.dataset.before;
+          if (viewLabel && thumb.dataset.label) viewLabel.textContent = thumb.dataset.label;
+          setCompare(50);
+        });
+      });
+    });
+
+    // Intersection Animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal, .rise').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
